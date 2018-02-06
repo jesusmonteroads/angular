@@ -34,41 +34,31 @@
   </div>
 </nav>
 
-
-<h1>Hola {{a + b}} {{a * b}}</h1>
-<button [disabled]='listo' (click)='mensaje()'>Hola mundo</button>
-
-<!-- <ng-container *ngFor0=''>
-  <li>{{}}</li>
-</ng-container> -->
-
-<br>
-<br>
-<hr>
-<input type="text" placeholder="Hola" [(ngModel)]='nombre'>
-<h1>{{nombre}}</h1>
-
-<ng-container *ngFor='let serie of dragonball'>
-  <li class="list-group-item" *ngIf='serie.active'>{{serie.nombre}}</li>
-</ng-container>
-
-<hr>
-
-<ng-container *ngFor='let serie of dragonball'>
-  <li [ngStyle]="{color: (serie.active) ? 'red' : yellow} ">{{serie.nombre}}</li>
-</ng-container>
-
-<hr>
-<ul class="list-group">
-<ng-container *ngFor='let serie of dragonball' [ngSwitch]="serie.distancia">
-  <li class="list-group-item" contar [ngClass]="'fondo'" [resaltar]='serie.plan'>{{serie.nombre}}</li>
-  <div *ngSwitchCase="1" [ngStyle]="{color: 'green'}">- Cerca</div>
-  <div *ngSwitchCase="2" [ngStyle]="{color: 'orange'}">- Más o menos cerca</div>
-  <div *ngSwitchCase="3" [ngStyle]="{color: '<green></green>'}">- Medio Medio</div>
-  <div *ngSwitchCase="4">- Lejos</div>
-</ng-container>
-</ul>
+<h1>String interpolation</h1>
+<h2>{{a+b}}</h2>
+<button type="button" [disabled]='btn' (click)='alerta()' name="button">Tocame</button>
+<input type="text" placeholder='Hola' [(ngModel)]="nombre">
+<input type="text" placeholder='Hola' [(ngModel)]="apellido">
+<h2>{{nombre}}</h2>
+<h2>{{apellido}}</h2>
 
 <agm-map [latitude]="lat" [longitude]="lng">
   <agm-marker [latitude]="lat" [longitude]="lng"></agm-marker>
 </agm-map>
+
+
+<div class="container">
+  <div class="row">
+    <div class="col-md-6">
+<ul escuchador class="list-group">
+  <ng-container *ngFor="let dragon of peleadores">
+  <li class="list-group-item" *ngIf="dragon.poder == true" [ngStyle]="{color: 'green'}" [ngClass]="'fondo'"  [resaltar]='dragon.nombre'>
+    {{dragon.nombre + ' san'}}
+  </li>
+  </ng-container>
+</ul>
+
+</div>
+</div>
+
+</div>
