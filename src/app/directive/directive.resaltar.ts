@@ -8,7 +8,7 @@ export class ResaltarTexto implements OnInit{
   @Input('resaltar') nombre : string
   ngOnInit(){
     if(this.nombre == 'Goku'){
-      this.renderer.setStyle(this.elRef.nativeElement, 'color', 'red')
+      this.renderer.setStyle(this.elRef.nativeElement, 'color', 'gray')
       this.renderer.setStyle(this.elRef.nativeElement, 'font-size', '25px')
     }
   }

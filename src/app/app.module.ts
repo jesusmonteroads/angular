@@ -3,6 +3,7 @@ import { NgModule } from '@angular/core';
 import { AppComponent } from './app.component';
 import { LugaresComponent } from './lugares/lugares.component';
 import { DetalleComponent } from './detalle/detalle.component';
+import { ContactoComponent } from './contacto/contacto.component';
 import { FormsModule } from '@angular/forms';
 import { AgmCoreModule } from '@agm/core';
 import { ResaltarTexto } from './directive/directive.resaltar';
@@ -15,7 +16,8 @@ const appRoutes: Routes = [
   {path: '', component: LugaresComponent},
   {path: 'lugares', component: LugaresComponent},
   {path: 'detalles/:id', component: DetalleComponent},
-  {path: 'detalles', component: DetalleComponent}
+  {path: 'detalles', component: DetalleComponent},
+  {path: 'contacto', component: ContactoComponent}
 ]
 
 @NgModule({
@@ -24,7 +26,8 @@ const appRoutes: Routes = [
     ResaltarTexto,
     EscuchadorClick,
     LugaresComponent,
-    DetalleComponent
+    DetalleComponent,
+    ContactoComponent
   ],
   imports: [
     BrowserModule,

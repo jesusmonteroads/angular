@@ -1,1 +1,12 @@
-<h1>Detalles</h1>
+<nav aria-label="breadcrumb">
+  <ol class="breadcrumb">
+    <a routerLink="/lugares"> <li class="breadcrumb-item active" aria-current="page">Lugares</li></a> / {{dragon.nombre}}
+  </ol>
+</nav>
+
+<div class='container'>
+<h1>{{dragon.nombre}}</h1>
+<hr>
+<h2>{{dragon.poder}}</h2>
+<h3>{{dragon.descripcion}}</h3>
+</div>
