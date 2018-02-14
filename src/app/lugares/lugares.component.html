@@ -1,0 +1,28 @@
+<h1>String interpolation</h1>
+<h2>{{a+b}}</h2>
+<button type="button" [disabled]='btn' (click)='alerta()' name="button">Tocame</button>
+<input type="text" placeholder='Hola' [(ngModel)]="nombre">
+<input type="text" placeholder='Hola' [(ngModel)]="apellido">
+<h2>{{nombre}}</h2>
+<h2>{{apellido}}</h2>
+
+<agm-map [latitude]="lat" [longitude]="lng">
+  <agm-marker [latitude]="lat" [longitude]="lng"></agm-marker>
+</agm-map>
+
+
+<div class="container">
+  <div class="row">
+    <div class="col-md-6">
+<ul escuchador class="list-group">
+  <ng-container *ngFor="let dragon of peleadores">
+  <a routerLink="/detalles/{{dragon.id}}">
+    <li class="list-group-item" *ngIf="dragon.poder == true" [ngStyle]="{color: 'green'}" [ngClass]="'fondo'"  [resaltar]='dragon.nombre'>
+    {{dragon.nombre + ' san'}}
+  </li></a>
+  </ng-container>
+</ul>
+</div>
+</div>
+
+</div>
