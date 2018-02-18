@@ -3,7 +3,8 @@ import { NgModule } from '@angular/core';
 import { AppComponent } from './app.component';
 import { LugaresComponent } from './lugares/lugares.component';
 import { DetalleComponent } from './detalle/detalle.component';
-import { ContactoComponent } from './contacto/contacto.component';
+import { LugaresService } from './service/lugares.service';
+import { ContactoComponent } from './Contacto/Contacto.component';
 import { FormsModule } from '@angular/forms';
 import { AgmCoreModule } from '@agm/core';
 import { ResaltarTexto } from './directive/directive.resaltar';
@@ -17,7 +18,7 @@ const appRoutes: Routes = [
   {path: 'lugares', component: LugaresComponent},
   {path: 'detalles/:id', component: DetalleComponent},
   {path: 'detalles', component: DetalleComponent},
-  {path: 'contacto', component: ContactoComponent}
+  {path: 'contacto', component: ContactoComponent},
 ]
 
 @NgModule({
@@ -29,6 +30,7 @@ const appRoutes: Routes = [
     DetalleComponent,
     ContactoComponent
   ],
+
   imports: [
     BrowserModule,
     FormsModule,
@@ -38,7 +40,8 @@ const appRoutes: Routes = [
     BrowserAnimationsModule,
     RouterModule.forRoot(appRoutes)
   ],
-  providers: [],
+
+  providers: [LugaresService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

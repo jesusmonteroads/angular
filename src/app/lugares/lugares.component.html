@@ -15,14 +15,16 @@
 <div class="container">
   <div class="row">
     <div class="col-md-6">
+
 <ul escuchador class="list-group">
   <ng-container *ngFor="let dragon of peleadores">
   <a routerLink="/detalles/{{dragon.id}}" [queryParams]="{action: 'view'}">
-    <li class="list-group-item" *ngIf="dragon.poder == true" [ngStyle]="{color: 'green'}" [ngClass]="'fondo'"  [resaltar]='dragon.nombre'>
+    <li class="list-group-item" *ngIf="dragon.active === true" [ngStyle]="{color: 'green'}" [ngClass]="'fondo'"  [resaltar]='dragon.nombre'>
     {{dragon.nombre + ' san'}}
   </li></a>
   </ng-container>
 </ul>
+
 </div>
 </div>
 

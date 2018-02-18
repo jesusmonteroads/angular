@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { LugaresService } from '../service/lugares.service';
 
 @Component({
   selector: 'app-lugares',
@@ -9,23 +10,16 @@ export class LugaresComponent {
   b = 5;
   btn = false;
 
-  peleadores = [
-    {id: 1, nombre: 'Goku', poder: true},
-    {id: 2, nombre: 'Gohan', poder: true},
-    {id: 3, nombre: 'Vegeta', poder: true},
-    {id: 4, nombre: 'Chucho', poder: false}
-  ]
-
-constructor(){
-  setTimeout(()=>{
-    this.btn = true;
-  },5000)
+peleadores = null;
+constructor(private lugaresService: LugaresService){
+  this.peleadores = lugaresService.getPeleadores();
 }
 
 alerta(){
   alert('Hola')
 }
 
-lat: number = 51.678418;
+ lat: number = 51.678418;
  lng: number = 7.809007;
+ lugares = null;
 }
