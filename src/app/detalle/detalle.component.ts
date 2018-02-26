@@ -9,8 +9,6 @@ import { LugaresService } from '../service/lugares.service';
 })
 
 export class DetalleComponent {
-
-
   id = null;
   dragon = {};
   constructor(private route: ActivatedRoute, private lugaresService: LugaresService){

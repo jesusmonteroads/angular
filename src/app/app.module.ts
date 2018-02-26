@@ -12,6 +12,12 @@ import { EscuchadorClick } from './directive/click';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { Routes, RouterModule } from '@angular/router';
 
+// Firebase
+import { AngularFireModule } from 'angularfire2';
+import { AngularFirestoreModule } from 'angularfire2/firestore';
+import { AngularFireStorageModule } from 'angularfire2/storage';
+import { AngularFireAuthModule } from 'angularfire2/auth';
+import { environment } from '../environments/environment';
 
 const appRoutes: Routes = [
   {path: '', component: LugaresComponent},
@@ -21,6 +27,7 @@ const appRoutes: Routes = [
   {path: 'contacto', component: ContactoComponent},
 ]
 
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -28,7 +35,7 @@ const appRoutes: Routes = [
     EscuchadorClick,
     LugaresComponent,
     DetalleComponent,
-    ContactoComponent
+    ContactoComponent,
   ],
 
   imports: [
@@ -38,7 +45,11 @@ const appRoutes: Routes = [
       apiKey: 'YOUR_KEY'
     }),
     BrowserAnimationsModule,
-    RouterModule.forRoot(appRoutes)
+    RouterModule.forRoot(appRoutes),
+    AngularFireModule.initializeApp(environment.firebase, 'environment'), // imports firebase/app needed for everything
+    AngularFirestoreModule, // imports firebase/firestore, only needed for database features
+    AngularFireAuthModule, // imports firebase/auth, only needed for auth features,
+    AngularFireStorageModule // imports firebase/storage only needed for storage features
   ],
 
   providers: [LugaresService],
